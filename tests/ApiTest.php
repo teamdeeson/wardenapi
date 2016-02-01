@@ -2,6 +2,12 @@
 
 namespace WardenApi;
 
+/**
+ * Class to test the Warden API functionality.
+ *
+ * @package WardenApi
+ * @author John Ennew <johne@deeson.co.uk>
+ */
 class ApiTest extends \PHPUnit_Framework_TestCase {
 
   /**
