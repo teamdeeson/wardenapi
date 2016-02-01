@@ -21,6 +21,8 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals('user', $api->getUsername());
     $this->assertEquals('pass', $api->getPassword());
     $this->assertEquals('/dev/null', $api->getCertificatePath());
+    $this->assertEquals(TRUE, $api->hasBasicAuthentication());
+    $this->assertEquals(TRUE, $api->hasCertificatePath());
   }
 
 }
