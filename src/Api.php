@@ -55,6 +55,7 @@ class Api {
     $this->wardenUrl = $warden_url;
     $this->username = $username;
     $this->password = $password;
+    $this->certificatePath = $certificatePath;
   }
 
   /**
