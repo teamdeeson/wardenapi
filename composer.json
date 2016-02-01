@@ -1,0 +1,33 @@
+{
+  "name": "teamdeeson/wardenapi",
+  "type": "library",
+  "description": "Warden API utility",
+  "keywords": [
+    "warden",
+    "drupal"
+  ],
+  "homepage": "https://www.deeson.co.uk/labs",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "John Ennew",
+      "email": "johne@deeson.co.uk"
+    },
+    {
+      "name": "Mike Davis",
+      "email": "miked@deeson.co.uk"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WardenApi\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.5.9",
+    "guzzlehttp/guzzle": "^6.2@dev"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.2.*"
+  }
+}
