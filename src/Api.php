@@ -59,6 +59,34 @@ class Api {
   }
 
   /**
+   * @return string
+   */
+  public function getWardenUrl() {
+    return $this->wardenUrl;
+  }
+
+  /**
+   * @return string
+   */
+  public function getUsername() {
+    return $this->username;
+  }
+
+  /**
+   * @return string
+   */
+  public function getPassword() {
+    return $this->password;
+  }
+
+  /**
+   * @return string
+   */
+  public function getCertificatePath() {
+    return $this->certificatePath;
+  }
+
+  /**
    * Get the public key.
    *
    * @throws WardenBadResponseException
