@@ -73,10 +73,24 @@ class Api {
   }
 
   /**
+   * @return bool
+   */
+  public function hasBasicAuthentication() {
+    return !empty($this->getUsername());
+  }
+
+  /**
    * @return string
    */
   public function getPassword() {
     return $this->password;
+  }
+
+  /**
+   * @return bool
+   */
+  public function hasCertificatePath() {
+    return !empty($this->getCertificatePath());
   }
 
   /**
@@ -234,12 +248,12 @@ class Api {
    *   If the response status was not 200
    */
   public function request($path, $content = '') {
-    $url = $this->wardenUrl . $path;
+    $url = $this->getWardenUrl() . $path;
 
     $options = [];
 
-    if (!empty($this->username)) {
-      $options['auth'] = [ $this->username, $this->password];
+    if ($this->hasBasicAuthentication()) {
+      $options['auth'] = [ $this->getUsername(), $this->getPassword()];
     }
 
     $method = 'GET';
@@ -248,8 +262,8 @@ class Api {
       $options['body'] = $content;
     }
 
-    if (!empty($this->certificatePath)) {
-      $options['cert'] = $this->certificatePath;
+    if (!empty($this->hasCertificatePath())) {
+      $options['cert'] = $this->getCertificatePath();
     }
 
     $client = new Client();
