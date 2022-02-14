@@ -172,7 +172,7 @@ class Api {
 
     $public_key = $this->getPublicKey();
 
-    $result = openssl_seal($plaintext, $message, $keys, array($public_key));
+    $result = openssl_seal($plaintext, $message, $keys, array($public_key), 'RC4');
 
     if ($result === FALSE || empty($keys[0]) || empty($message) || $message === $plaintext) {
       throw new EncryptionException('Unable to encrypt a message: ' . openssl_error_string());
